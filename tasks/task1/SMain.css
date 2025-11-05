@@ -1,0 +1,49 @@
+
+body {
+    background-color: #d9eded;
+}
+
+h1 {
+    color:#6cb513;
+    font-size: 46px;
+    font-weight: 900;
+    font-family:  "Oswald", sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+}
+h2 {
+   color:crimson;
+    font-size: 30px;
+    font-weight: 500;
+    font-family:  "Oswald", sans-serif;
+    letter-spacing: 1px; 
+    
+}
+p {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+li {
+    color:black;
+    font-size: x-large;
+}
+.box {
+    box-sizing: border-box;
+    border: 5px solid rgb(29, 18, 82);
+    width: calc(25% - 30px);
+    height: 270px;
+    font-size: 18px;
+    display: inline-block;
+    min-width: 250px;
+    vertical-align: top;
+    margin: 10px 15px;
+    background-color: rgb(231, 247, 126);
+    text-align: center;
+    
+}
+p.mano-tekstas3 {
+    color: blue;
+}
+ol {
+    
+}

@@ -1,0 +1,78 @@
+
+body {
+    background-image: url(LeBron_James_\(51959977144\)_\(cropped2\).jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    
+}
+
+
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+}
+
+.box.red {
+    background-color: #dc143c70;
+    border-color: crimson;
+}
+.box.blue {
+    background-color: #6494ed70;
+    border-color: cornflowerblue;
+}
+section {
+    margin: 30px;
+    border: 1px solid gray;
+    min-height: 400px;
+    position: relative;
+}
+.box1 {
+    position: relative;
+    top: 30px;
+    left: 100px;
+}
+.box2 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.box3 {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+h1 {
+    font-size: 50px;
+}
+h1 span {
+    font-size: 18px;
+    position: relative;
+    bottom: 22px;
+    right: 2px;
+}
+
+.big-box {
+    border: 3px solid darkorange;
+    display: inline-block;
+    position: relative;
+}
+.big-box img {
+    width: 400px;
+}
+
+.big-box h2 {
+    position: relative;
+    bottom: 100 px;
+    left: 30px;
+    background-color: aqua;
+}
+.link {
+    text-decoration: none;
+    color: darkorange;
+    font-size: 100px;
+}

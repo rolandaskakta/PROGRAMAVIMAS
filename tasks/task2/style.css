@@ -1,0 +1,22 @@
+body {
+    background-color: white;
+}
+
+div.main {
+    position: relative;
+    top: 56px;
+    left: -50px;
+    width: 1487px;
+    height: 719px;
+}
+
+div.box {
+    font-size: 24px bold;
+    font-family: "Mulish", sans-serif;
+    position: relative;
+    width: 160px;
+    height: 41px;
+    left: 191px;
+    top:56px;
+
+}
