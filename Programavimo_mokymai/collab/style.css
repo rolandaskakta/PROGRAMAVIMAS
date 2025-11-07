@@ -19,16 +19,19 @@
     height: 50px;
     display: flex;
     justify-content: space-between;
-   
+
     align-items: center;
     padding: 0 50px;
+    box-shadow: 1px 5px 5px -4px rgba(105, 105, 105, 0.3);
+    -webkit-box-shadow: 1px 5px 5px -4px rgba(105, 105, 105, 0.3);
+    -moz-box-shadow: 1px 5px 5px -4px rgba(105, 105, 105, 0.3);
 
 }
 
 .toprightMeniu {
     width: 670px;
     display: flex;
-    
+
     justify-content: space-between;
 }
 
@@ -37,10 +40,62 @@
     color: #2B0236;
     width: 80%;
     display: flex;
-    
+    align-items: center;
     justify-content: space-between;
     list-style: none;
     text-decoration: none;
     font-weight: 600;
+
+}
+
+.headerButton {
+    padding: 6px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 2px solid #9A54BC;
+    color: #9A54BC;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.headerButton:hover {
+    background-color: #9A54BC;
+    color: #FFFFFF;
+}
+
+.firstSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    row-gap: 23px;
+
+    h1 {
+        font-size: 56px;
+        text-align: center;
+        color: #2B0236;
+        letter-spacing: 1.2px;
+    }
+
+
+
+
+    button {
+        background-color: #9A54BC;
+        border: 2px solid;
+        padding: 15px;
+        color: #FFFFFF;
+        border-radius: 5px;
+        font-size: 12px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+    button:hover {
+
+        background-color: transparent;
+        color: #9A54BC;
+    }
 
 }
