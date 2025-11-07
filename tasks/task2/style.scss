@@ -5,10 +5,14 @@
 }
 
 body {
-    margin: 0;
+    align-items: center;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     font-family: "Mulish", sans-serif;
+    width: 1600px;
+    height: 5870px;
+    
 
 }
 
@@ -35,6 +39,7 @@ a {
     top: 96px;
     left: 57px;
     align-items: center;
+    
 
 
 
@@ -45,7 +50,7 @@ a {
         justify-content: space-between;
         height: 41px;
         margin: 30px;
-        padding: 0 130px;
+        padding: 0 70px 0 230px;
 
 
     }
@@ -55,6 +60,7 @@ a {
         display: flex;
         width: 160px;
         height: 41px;
+       
 
     }
 
@@ -68,6 +74,8 @@ a {
         flex-direction: row;
         color: #1F1534;
         opacity: 50%;
+        line-height: normal;
+        font-weight: 400;
 
     }
 
@@ -76,10 +84,81 @@ a {
 
 }
 
-.ilustration {
-    width: 693px;
-    height: 598px;
+.firstsec {
+    display: flex;
+    // background-color: antiquewhite;
+
+    .ikona1 {
+        display: flex;
+        width: 131.581px;
+        height: 115px;
+        // flex-shrink: 0;
+        position: relative;
+        top: 20px;
+        left: 20px;
+    }
+
+    button {
+        cursor: pointer;
+        width: 200px;
+        height: 56px;
+        flex-shrink: 0;
+        border-radius: 55px;
+        background: #458FF6;
+        color: #FFF;
+        font-family: Mulish;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        position: relative;
+        top: 420px;
+        left: 140px;
+        // text-align: center;
+        /* 333.333% */
+    }
+
+    .apie {
+        display: flex;
+        width: 450px;
+        height: 233px;
+        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        top: 140px;
+        left: -60px;
+
+        h1 {
+            color: #000;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            /* 116.667% */
+
+        }
+
+        p {
+            color: #7D7987;
+            font-size: 21px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 32px;
+            /* 152.381% */
+        }
 
 
 
+    }
+
+
+    .ilustration1 {
+        width: 693px;
+        height: 598px;
+        position: relative;
+        top: 30px;
+        left: 50px;
+
+
+
+    }
 }
