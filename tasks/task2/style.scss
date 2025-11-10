@@ -12,8 +12,6 @@ body {
     font-family: "Mulish", sans-serif;
     width: 1600px;
     height: 5870px;
-
-
 }
 
 
@@ -25,10 +23,7 @@ a {
     text-decoration: none;
     margin: 5px;
     padding: 0;
-
 }
-
-
 
 .topHeader {
     justify-content: space-between;
@@ -40,11 +35,6 @@ a {
     left: 57px;
     align-items: center;
 
-
-
-
-
-
     .topMenu {
         width: 100%;
         display: flex;
@@ -52,9 +42,6 @@ a {
         height: 41px;
         margin: 30px;
         padding: 0 70px 0 230px;
-
-
-
     }
 
     .logo {
@@ -62,8 +49,6 @@ a {
         display: flex;
         width: 160px;
         height: 41px;
-
-
     }
 
     .links {
@@ -82,16 +67,8 @@ a {
 
         .home {
             font-weight: 700;
-
         }
-
-
     }
-
-
-
-
-
 }
 
 .firstSection {
@@ -118,8 +95,6 @@ a {
         justify-content: space-evenly;
         flex-direction: column;
         margin: 60px 0;
-
-
 
         button.consultToday {
             cursor: pointer;
@@ -156,8 +131,6 @@ a {
                 font-style: normal;
                 font-weight: 700;
                 line-height: 56px;
-
-
             }
 
             p {
@@ -166,14 +139,9 @@ a {
                 font-style: normal;
                 font-weight: 300;
                 line-height: 32px;
-
             }
-
-
-
         }
     }
-
 
     .ilustration1 {
         width: 693px;
@@ -182,66 +150,135 @@ a {
         padding: 0 0 0 30px;
         // top: 30px;
         // left: 50px;
-
-
-
     }
 }
 
-
 .secondSection {
-    background-color: antiquewhite;
+    // background-color: antiquewhite;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    padding: 100px 0;
 
-    h2 {
-        color: #000;
-        font-family: Mulish;
-        font-size: 36px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 56px;
+    .ourServices {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 320px;
+
+        h2 {
+            color: #000;
+            font-family: Mulish;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            padding: 0 0 30px 0;
+        }
+
+        .rectangle {
+            box-sizing: border-box;
+            width: 56px;
+            height: 2px;
+            border-radius: 5px;
+            background: #000;
+            background-color: #000;
+        }
+
+        p {
+            color: #7D7987;
+            text-align: center;
+            font-family: Mulish;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 30px 0 0 0;
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .vector {
+        position: absolute;
+        top: 90px;
+        left: -800px;
+        opacity: 0.5;
+        z-index: 0;
+    }
+
+    .elementas {
+        position: absolute;
+        top: 410px;
+        left: 510px;
+        opacity: 0.5;
+        z-index: 0;
     }
 
     .servicesMenu {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        // flex-shrink: 0;
+        padding: 100px 170px 50px 170px;
+        position: relative;
+        z-index: 1;
 
-        .div {
-            box-sizing: border-box;
-            border: 2px solid rgb(166, 11, 166);
-            width: calc(33.3333% - 30px);
-            height: 300px;
+        .block {
+            cursor: pointer;
+            justify-content: space-between;
+            width: 350px;
+            height: 354px;
             font-size: 18px;
-            display: inline-block;
             min-width: 300px;
-            vertical-align: top;
-            margin: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            margin: 20px;
+            background: #FFF;
+            box-shadow: 10px 40px 50px 0 rgba(229, 233, 246, 0.40);
+        }
+
+        button {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 40px;
+        }
+
+        h3 {
+            color: #000;
+            font-family: Mulish;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            /* 233.333% */
+        }
+
+        p {
+            color: #7D7987;
+            font-family: Mulish;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 28px;
+            text-align: left;
         }
 
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     button.firstLearnMore {
 
         cursor: pointer;
-
         width: 200px;
         height: 56px;
         flex-shrink: 0;
@@ -256,6 +293,203 @@ a {
         border-color: #458FF6;
     }
 
+}
+
+.thirdSection {
+    // background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 100px 100px;
+
+    .ilustration2 {
+        // padding: 0px 100px 0 0;
+    }
+
+    .providers {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 70px 70px 50px 0;
+
+        h2 {
+            color: #000;
+            font-family: Mulish;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            padding: 0 0 30px 0;
+        }
+
+        .rectangle {
+            box-sizing: border-box;
+            width: 56px;
+            height: 2px;
+            border-radius: 5px;
+            background: #000;
+            background-color: #000;
+        }
+
+        p {
+            color: #7D7987;
+            text-align: center;
+            font-family: Mulish;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 30px 0;
+            text-align: left;
+        }
+
+        button.secondLearnMore {
+
+            cursor: pointer;
+            width: 200px;
+            height: 56px;
+            flex-shrink: 0;
+            border-radius: 55px;
+            background: #FFF;
+            color: #458FF6;
+            font-family: Mulish;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            position: relative;
+            border-color: #458FF6;
+
+        }
+    }
+}
+
+.fourthSection {
+    // background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 100px 100px;
+
+    .ilustration3 {
+        // padding: 0px 100px 0 0;
+    }
+
+    .apps {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 70px 70px 50px 150px;
+
+        h2 {
+            color: #000;
+            font-family: Mulish;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            padding: 0 0 30px 0;
+        }
+
+        .rectangle {
+            box-sizing: border-box;
+            width: 56px;
+            height: 2px;
+            border-radius: 5px;
+            background: #000;
+            background-color: #000;
+        }
+
+        p {
+            color: #7D7987;
+            text-align: center;
+            font-family: Mulish;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 30px 0;
+            text-align: left;
+        }
+
+        button.download {
+
+            cursor: pointer;
+            width: 200px;
+            height: 56px;
+            // flex-shrink: 0;
+            border-radius: 55px;
+            background: #FFF;
+            color: #458FF6;
+            font-family: Mulish;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            position: relative;
+            border-color: #458FF6;
+        }
+    }
+}
+
+.fifthSection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px 0;
+   
+
+    .wrapper2 {
+        position: relative;
+        display: inline-block;
+    }
+    
+
+    .backElement {
+        position: absolute;
+        top: 250px;
+        left: -620px;
+        opacity: 0.5;
+        z-index: 0;
+
+    }
+
+    .rectangle13 {
+        display: flex;
+        flex-direction: column;
+        
+        box-sizing: border-box;
+        width: 1120px;
+        height: 425px;
+        flex-shrink: 0;
+        border-radius: 24px;
+        background: linear-gradient(208deg, #67C3F3 9.05%, #5A98F2 76.74%);
+        position: relative;
+        z-index: 1;
+
+
+
+        .topElement {
+        position:absolute;
+        top: -50px;
+        left: 1000px;
+        // opacity: 0.26;
+    }
+
+    }
+
+    .mygtukai {
+        display: flex;
+        width: 600px;
+        justify-content:space-evenly ;
+         padding: 50px 0 0  0;
+         align-items: center;
+         flex-direction: row;
+
+    }
 
 
 
