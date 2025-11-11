@@ -4,14 +4,27 @@
     padding: 0;
 }
 
+@media (min-width: 1600px) {
+    body {
+        width: 1600px;
+    }
+}
+
+@media (max-width: 1250px) {
+    body {
+        width: 1250px;
+    }
+}
 body {
+    // display: flex;
+    // justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     font-family: "Mulish", sans-serif;
-    width: 1600px;
-    height: 5870px;
+    // width: 1600px;
+    // height: 5870px;
 }
 
 
