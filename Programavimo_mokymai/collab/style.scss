@@ -9,7 +9,7 @@ $white: #FFFFFF;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 body {
@@ -155,6 +155,71 @@ body {
         color: $white;
     }
 
+}
+
+.thirdSection {
+
+    flex-direction: column;
+    width: auto;
+    height: 240px;
+    gap: 50px;
+
+
+
+    .containerIcons {
+
+        justify-content: space-evenly;
+        width: 70%;
+    }
+}
+
+
+.sectionCollabHelp {
+    background-color: antiquewhite;
+    margin-top: 50px;
+
+    flex-direction: column;
+
+    h2 {
+        background-color: aquamarine;
+        width: auto;
+    }
+
+    .collabHelpMainContainer {
+        background-color: lightcyan;
+        width: 100%;
+        height: 500px;
+        align-items: flex-start;
+
+
+        .collabHelpLeftContainer {
+            background-color: lightgreen;
+            height: 300px;
+            width: 400px;
+            margin: 16px 0 0 0;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .collabHelpButtonContainer {
+                width: 100%;
+
+
+                button {
+                    cursor: pointer;
+                    width: 50%;
+                    background-color: $white;
+                    border: 2px solid $white;
+                    padding: 5px;
+
+                }
+
+                button:hover {
+                    background-color: $lightPurple;
+                    color: $white;
+                }
+            }
+        }
+    }
 
 
 
