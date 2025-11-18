@@ -103,6 +103,23 @@ for (let i = 0; i < sizes.length; i++) {
   go4Section.appendChild(div);
 }
 
+// 5 uzduotis
 
+const spanas1 = document.querySelector ('#go5');
 
+for (let i = 0; i < 3; i++) {
+    const number = rand(-10, 10);
+    const span = document.createElement('span');
+    span.textContent = number;
 
+    if (number > 0) {
+        span.style.color = 'blue';
+    } else if (number < 0) {
+        span.style.color = 'red';
+    } else {
+        span.style.color = 'green';
+    }
+
+     spanas1.appendChild(span);
+console.log (span1);
+}
