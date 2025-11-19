@@ -1,6 +1,7 @@
 $lightPurple: #9A54BC;
 $darkPurple: #60267F;
 $white: #FFFFFF;
+$grey:#A79D9D;
 
 
 
@@ -23,6 +24,9 @@ body {
     height: 500vh;
     width: 1600px;
 }
+ h2 {
+            font-size: xx-large;
+        }
 
 .flex {
     display: flex;
@@ -390,4 +394,50 @@ body {
             }
         }
     }
+}
+
+
+.readyToStart {
+    margin-top: 200px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.readyToStartTopP {
+    color: $grey;
+}
+
+.readyToStartTopDiv {
+    gap:15px;
+}
+
+.monthly {
+    color: $grey;
+}
+.yearly {
+    font-weight: 500;
+}
+
+.discount {
+    font-size: 14px;
+    background-color:#FFE87A ;
+    padding: 4px 7px;
+}
+.readyToStartCard {
+    flex-direction: column;
+    border: 2px solid $grey;
+    border-radius: 5%;
+    width: 250px;
+    height: 400px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 25px;
+    gap:15px;
+}
+.readyToStartCard ul {
+    margin-left: 18px;
+}
+
+.readyToStartCard p {
+    font-weight: 500;
 }
