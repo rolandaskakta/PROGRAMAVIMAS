@@ -91,7 +91,7 @@ a {
         align-items: center;
         flex-direction: row;
         color:$grey;
-        opacity: 50%;
+        
         line-height: normal;
         font-weight: 400;
         font-style: normal;
@@ -104,6 +104,10 @@ a {
          .home {
             color:$black;
             font-weight: 700;
+        }
+        a {
+            color: black;
+            opacity: 50%;
         }
 
         

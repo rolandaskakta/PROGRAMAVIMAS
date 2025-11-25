@@ -171,12 +171,12 @@ galutineKaina.innerText = galutinesKainosSuma - nuolaida1;
 
 const circles = document.querySelectorAll('#go8 > div');
 
-// Initialize counters for each color
+
 let greenCount = 0;
 let redCount = 0;
 let blueCount = 0;
 
-// Iterate over each circle and count the colors
+
 circles.forEach(circle => {
     let color = circle.style.backgroundColor;
     switch(color) {
@@ -192,7 +192,7 @@ circles.forEach(circle => {
     }
 });
 
-// Update the results in the HTML
+
 document.querySelector('#go8 [data-result] [data-green] span').textContent = greenCount;
 document.querySelector('#go8 [data-result] [data-red] span').textContent = redCount;
 document.querySelector('#go8 [data-result] [data-blue] span').textContent = blueCount;
@@ -217,21 +217,25 @@ document.querySelector('#go8 [data-result] [data-blue] span').textContent = blue
 
 const rows = document.querySelectorAll('#go9 div');
 
-// Iterate over each row
+
 rows.forEach(row => {
-    // Get the span elements containing the numbers
+  
     const spans = row.querySelectorAll('span');
 
-    // Extract the numbers
+   
     const num1 = Number(spans[0].textContent);
     const num2 = Number(spans[1].textContent);
 
-    // Calculate the product
-    // const product = num1 * num2;
-
-    // Update the third span with the result
+   
     spans[2].textContent = num1 * num2;
 });
 
 
 
+document.querySelectorAll('#go10 > div').forEach(el => {
+  const w = el.offsetWidth;
+  const h = el.offsetHeight;
+  if (w * h > 10000) {
+    el.style.backgroundColor = 'red';
+  }
+});
