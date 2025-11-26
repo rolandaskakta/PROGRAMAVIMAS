@@ -93,3 +93,59 @@ const arLyginis2 = _ => console.log((_ % 2 == 0) ? 'Lyginis' : 'Nelyginis');
 
 arLyginis2(11);
 arLyginis2(8);
+
+///---------------------------------------------------------------------------------------------------/////
+console.clear();
+
+function suma (a, b) {
+    console.log('skaiciuojam a ir b suma');
+    return a + b ;
+    console.log(('skaiciuojam a ir b suma'));
+}
+
+console.log(suma (5, 7));
+
+const elektrosSkaitliukas = (sioMen, praeitoMen) => {
+    return ((sioMen - praeitoMen) * 0.24).toFixed(2);
+
+}
+
+const elektraSpalis = elektrosSkaitliukas (123456, 123356);
+console.log(elektraSpalis);
+
+const elektraLapkritis = elektrosSkaitliukas (124002,123456);
+console.log(elektraLapkritis);
+
+const elektraGruodis =  elektrosSkaitliukas(124379, 124002);
+console.log(elektraGruodis);
+
+//sukurti funkcija kuri skaiciuotu kuno mases indeksa, funkcijai paduodam du argumentus (svori, ugi)
+
+function kmi  (svoris, ugis) {
+    return (svoris / ((ugis/100)**2)).toFixed(1);
+}
+
+let manoSvoris = kmi(105, 195);
+console.log(manoSvoris);
+
+let tavoSvoris = kmi(65, 165);
+console.log(tavoSvoris);
+
+
+// sukurti funkcija, kuri gauna ( x , y) ir grazintu rezultata x *y
+
+
+function daugyba (x, y){
+    return (x * y);
+}
+
+let kazkas = daugyba(7, 9);
+console.log(kazkas)
+
+
+const daugyba2 = (x, y) => {
+    return (x *y);
+}
+
+let kazkas2 = daugyba2(5, 10);
+console.log(kazkas2);
