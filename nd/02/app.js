@@ -12,18 +12,99 @@ console.log(result);
 
 // 2 uzduotis
 
+document.getElementById("spauskMane").addEventListener("click", function () {
+  const result = getRandomAnimal();
+  document.getElementById("animal").innerText = result;
+});
 
+//3. Parašykite funkciją, kuri priima vieną argumentą- stringą ir grąžina tris pirmas to stringo raides.
+//  Jeigu stringas yra trumpesnis nei trys raidės- grąžina visas raides. Funkcijos grąžinamą rezultatą
+//  priskirkite kintamajam ir jį atspausdinkite konsolėje.
 
-// 1. Funkcija, kuri grąžina atsitiktinį gyvūną
-  function getRandomAnimal() {
-    const animals = ["Bebras", "Barsukas", "Briedis"];
-    const i = Math.floor(Math.random() * animals.length);
-    return animals[i];
+const pirmosTris = (pirma) => {
+  return pirma.slice(0, 3);
+}
+
+let rez1 = pirmosTris("Kugelis");
+console.log(rez1);
+
+// 4. Parašykite funkciją, kuri priima vieną argumentą- stringą ir grąžiną vidurinę raidę. 
+// Jeigu stringe yra porinis simbolių skaičius vietoj vidurinės raidės grąžina pranešimą: 
+// “Simbolių skaičius lyginis”. Konsoleje pademostruokite funkcijos veikimą su lyginius
+//  ir nelyginius simbolių kiekius turinčiais stringais.
+
+const vidurineRaide = (vidurine) => {
+  if (vidurine.length % 2 === 0) {
+    return "Simbolių skaičius lyginis";
+  } else {
+    let vidurys = Math.floor(vidurine.length / 2);
+    return vidurine[vidurys];
   }
+}
 
-  // 2. Mygtuko paspaudimo įvykis
-  document.getElementById("btn").addEventListener("click", function() {
-    const result = getRandomAnimal();      // gauname gyvūną
-    console.log(result);                   // atspausdiname konsolėje
-    document.getElementById("animal").innerText = result; // įrašome į H2
-  });
+console.log(vidurineRaide("Kebabas"));
+console.log(vidurineRaide("Pica"));
+
+//5.Parašykite funkciją, kuri priimtų tris argumentus. Du pirmieji argumentai skaičiai,
+//  o trečias matematinio veiksmo ženklas (“+”, “-”, “*”, “/”) kaip stringas.
+//  Funkcija turi atlikti atitinkamą veiksmą su duotais skaičiais ir grąžinti rezultatą.
+//  Pademonstruokite funkcijos veikimą, rezultatus spausdindami konsolėje.
+
+function trysArgumentai(pirmas, antras, trecias) {
+  if (trecias === "+") {
+    return pirmas + antras;
+  } else if ( trecias === "-"){
+    return pirmas - antras;
+  } else if (trecias === "*"){
+    return pirmas * antras;
+  } else if (trecias === "/"){
+    return pirmas / antras;
+  }
+}
+
+console.log(trysArgumentai(1, 5, "+")); 
+console.log(trysArgumentai(8, 7, "-")); 
+console.log(trysArgumentai(15, 70, "*")); 
+console.log(trysArgumentai(358, 40, "/"));
+
+//6. Parašykite funkciją, kuri priimtų du argumentus. 
+// Abu argumentai skaičiai. Funkcija su skaičiais turi atlikti sumos ir sandaugos 
+// matematines operacijas ir argumentus bei abiejų operacijų rezultatus grąžintų objekto 
+// tipo kitamajame, turinčiame atitinkamas savybes: “pirmas”, “antras”, “suma”, “sandauga”. 
+// Funkcijos grąžinamą rezultatą priskirkite kintamajam ir jį atspausdinkite konsolėje.#object
+
+function duArgumentai(a, b) {
+    return {
+        pirmas: a,
+        antras: b,
+        suma: a + b,
+        sandauga: a * b
+    };
+}
+
+const rez2 = duArgumentai(7, 11);
+console.log(rez2);
+
+
+//7. Naudodami Html ir CSS nupaišykite mėlyną kvadratą. 
+// Kvadratui uždėkite “click” įvykį, kuris paleistų funkciją, kuri kvadratą nudažytų raudonai.
+//  Paspaudus mygtuką antrą kartą, turi pasileisti ta pati funkcija, bet kvadratą vėl nudažytų mėlynai. 
+// Spaudinėjant ant kvadrato, kvadrato spalva turėtų pastoviai keistis iš mėlynos į raudoną ir iš 
+// raudonos vėl atgal į mėlyną.
+
+const kv = document.getElementById('kvadratas');
+
+function toggleColor() {
+kv.classList.toggle('red');
+const isRed = kv.classList.contains('red');
+kv.setAttribute('aria-pressed', isRed);
+}
+
+kv.addEventListener('click', toggleColor);
+
+kv.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+toggleColor();
+}
+});

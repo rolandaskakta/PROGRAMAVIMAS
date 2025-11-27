@@ -144,7 +144,7 @@ console.log(kazkas)
 
 
 const daugyba2 = (x, y) => {
-    return (x *y);
+    return (x * y);
 }
 
 let kazkas2 = daugyba2(5, 10);
