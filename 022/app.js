@@ -141,3 +141,4 @@ const ufo4 = {...ufo1} // naujas objektas po ufopower pridejimo
 
 
 console.log(ufo1, ufo2, ufo3, ufo4,ufo5)
+

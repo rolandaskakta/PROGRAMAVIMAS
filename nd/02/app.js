@@ -1,5 +1,9 @@
 console.log('functions');
-
+function rand(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+}
 /// 1 uzduotis
 function getRandomAnimal() {
   const animals = ["Bebras", "Barsukas", "Briedis"];
@@ -53,18 +57,18 @@ console.log(vidurineRaide("Pica"));
 function trysArgumentai(pirmas, antras, trecias) {
   if (trecias === "+") {
     return pirmas + antras;
-  } else if ( trecias === "-"){
+  } else if (trecias === "-") {
     return pirmas - antras;
-  } else if (trecias === "*"){
+  } else if (trecias === "*") {
     return pirmas * antras;
-  } else if (trecias === "/"){
+  } else if (trecias === "/") {
     return pirmas / antras;
   }
 }
 
-console.log(trysArgumentai(1, 5, "+")); 
-console.log(trysArgumentai(8, 7, "-")); 
-console.log(trysArgumentai(15, 70, "*")); 
+console.log(trysArgumentai(1, 5, "+"));
+console.log(trysArgumentai(8, 7, "-"));
+console.log(trysArgumentai(15, 70, "*"));
 console.log(trysArgumentai(358, 40, "/"));
 
 //6. Parašykite funkciją, kuri priimtų du argumentus. 
@@ -74,12 +78,12 @@ console.log(trysArgumentai(358, 40, "/"));
 // Funkcijos grąžinamą rezultatą priskirkite kintamajam ir jį atspausdinkite konsolėje.#object
 
 function duArgumentai(a, b) {
-    return {
-        pirmas: a,
-        antras: b,
-        suma: a + b,
-        sandauga: a * b
-    };
+  return {
+    pirmas: a,
+    antras: b,
+    suma: a + b,
+    sandauga: a * b
+  };
 }
 
 const rez2 = duArgumentai(7, 11);
@@ -95,16 +99,71 @@ console.log(rez2);
 const kv = document.getElementById('kvadratas');
 
 function toggleColor() {
-kv.classList.toggle('red');
-const isRed = kv.classList.contains('red');
-kv.setAttribute('aria-pressed', isRed);
+  kv.classList.toggle('red');
+  const isRed = kv.classList.contains('red');
+  kv.setAttribute('aria-pressed', isRed);
 }
 
 kv.addEventListener('click', toggleColor);
 
 kv.addEventListener('keydown', (e) => {
-if (e.key === 'Enter' || e.key === ' ') {
-e.preventDefault();
-toggleColor();
-}
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleColor();
+  }
 });
+
+// 8. Html faile sukurkite button elementą su skaičiumi “0” elemento viduje. 
+// Parašykite funkciją, kuri pasileidinėtų spaudinėjant mygtuką ir kiekvienu 
+// paspaudimu didintų mygtuke esantį skaičių vienetu. Spaudinėjant mygtuką, 
+// jo viduje esantis skaičius turi pastoviai didėti: 0, 1, 2, 3…
+
+const button8 = document.getElementById('batonas')
+
+button8.addEventListener('click', () => {
+  let nulis = Number(button8.textContent);
+  button8.textContent = nulis + 1;
+});
+
+
+// 9. Html faile sukurkite button elementą ir tuščią H2 elementą.
+//  H2 elemente pradžioje įrašytas “1” nuspalvintas juodai. 
+// Paspaudus mygtuką, paleidžiama funkcija, kuri atsitiktiniu būdu
+//  į H2 elementą įrašo skaičius nuo 1 iki 6. Jeigu atsitiktinis skaičius
+//  tampa 6, jis nuspalvinamas raudonai ir toliau spaudinėjant mygtuką skaičius 
+// nebesikeičia.#elektroninisKauliukas
+
+const button9 = document.getElementsByClassName('butonas')[0];
+const h2 = document.getElementsByClassName('juodas')[0];
+
+
+button9.addEventListener('click', () => {
+  let skaicius = rand(1, 6);
+
+  if (skaicius === 6) {
+    h2.innerText = skaicius;
+     h2.style.color = 'crimson';
+     button9.disabled = true;
+    
+  } else {
+    h2.innerText = skaicius;
+    h2.style.color = 'black'
+  
+  }
+
+});
+
+// 10
+
+const btn = document.getElementById('skaiciuoti');
+    const rez = document.getElementById('rezultatas');
+
+    btn.addEventListener('click', () => {
+      const a = Number(document.getElementById('skaicius1').value);
+      const b = Number(document.getElementById('skaicius2').value);
+      const veiksmas = document.getElementById('veiksmas').value;
+
+      const rezultatas = trysArgumentai(a, b, veiksmas);
+
+      rez.textContent = `Rezultatas: ${rezultatas}`;
+    });
