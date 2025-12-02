@@ -1,53 +1,186 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
 
-    /* Reset */
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:#f4f6f8;color:#1f2d3d;padding:24px}
+body {
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2d3d;
+  padding: 24px
+}
 
-    /* Container */
-    .invoice-wrap{max-width:900px;margin:24px auto;background:#fff;border-radius:8px;box-shadow:0 6px 24px rgba(20,30,50,.08);overflow:hidden}
-    header{padding:28px 32px;border-bottom:1px solid #eef2f6;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:16px;align-items:center}
-    .logo{width:72px;height:72px;border-radius:8px;background:linear-gradient(135deg,#2b6df6,#6b28f2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-    .company{font-size:14px}
-    .company .name{font-weight:700;font-size:18px}
-    .meta{font-size:14px;text-align:right}
-    .meta div{margin-bottom:6px}
+/* Container */
+.invoice-wrap {
+  max-width: 900px;
+  margin: 24px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(20, 30, 50, .08);
+  overflow: hidden
+}
 
-    /* Addresses */
-    .addresses{display:flex;gap:24px;padding:20px 32px;border-bottom:1px solid #eef2f6}
-    .addresses > div{flex:1}
-    .addresses h4{font-size:13px;color:#657488;margin-bottom:8px}
-    .addresses p{font-size:14px;line-height:1.4}
+header {
+  padding: 28px 32px;
+  border-bottom: 1px solid #eef2f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
 
-    /* Table */
-    table{width:100%;border-collapse:collapse;margin:20px 32px 0}
-    thead th{background:#fafbfd;text-align:left;padding:12px 10px;font-size:13px;color:#2b3b4a;border-bottom:1px solid #eef2f6}
-    tbody td{padding:12px 10px;border-bottom:1px solid #f1f5f9;font-size:14px}
-    tbody tr.total td{font-weight:700;background:#fbfcff}
-    .right{text-align:right}
-    .center{text-align:center}
+.brand {
+  display: flex;
+  gap: 16px;
+  align-items: center
+}
 
-    /* Totals */
-    .summary{display:flex;justify-content:flex-end;padding:20px 32px 40px}
-    .summary table{width:360px}
-    .summary td{padding:8px 10px}
-    .summary tr.total-row td{font-weight:800;font-size:16px}
+.company {
+  font-size: 14px
+}
 
-    /* Footer */
-    footer{padding:20px 32px 32px;font-size:13px;color:#667085;border-top:1px solid #eef2f6}
+.company .name {
+  font-weight: 700;
+  font-size: 18px;
+   text-align: right
+   
+}
+.name div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 6px;
+  justify-content: space-between;
+  
+}
 
-    /* Responsive */
-    @media (max-width:700px){
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      .addresses{flex-direction:column}
-      .summary{justify-content:space-between}
-      .summary table{width:100%}
-    }
-
-    /* Print-friendly */
-    @media print{
-      body{background:white;padding:0}
-      .invoice-wrap{box-shadow:none;margin:0;border-radius:0}
-      footer{page-break-inside:avoid}
-    }
+.name {
+  font-size: 14px;
  
+}
+
+
+
+/* Addresses */
+.addresses {
+  display: flex;
+  gap: 24px;
+  padding: 20px 32px;
+  border-bottom: 1px solid #eef2f6
+}
+
+.addresses>div {
+  flex: 1
+}
+
+.addresses h4 {
+  font-size: 13px;
+  color: #657488;
+  margin-bottom: 8px
+}
+
+.addresses p {
+  font-size: 14px;
+  line-height: 1.4
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background: #fafbfd;
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 13px;
+  color: #2b3b4a;
+  border-bottom: 1px solid #eef2f6
+}
+
+tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px
+}
+
+tbody tr.total td {
+  font-weight: 700;
+  background: #fbfcff
+}
+
+.right {
+  text-align: right
+}
+
+.center {
+  text-align: center
+}
+
+/* Totals */
+.summary {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 32px 40px
+}
+
+.summary table {
+  width: 360px
+}
+
+.summary td {
+  padding: 8px 10px
+}
+
+.summary tr.total-row td {
+  font-weight: 800;
+  font-size: 16px
+}
+
+/* Footer */
+footer {
+  padding: 20px 32px 32px;
+  font-size: 13px;
+  color: #667085;
+  border-top: 1px solid #eef2f6
+}
+
+/* Responsive */
+@media (max-width:700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px
+  }
+
+  .addresses {
+    flex-direction: column
+  }
+
+  .summary {
+    justify-content: space-between
+  }
+
+  .summary table {
+    width: 100%
+  }
+}
+
+/* Print-friendly */
+@media print {
+  body {
+    background: white;
+    padding: 0
+  }
+
+  .invoice-wrap {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0
+  }
+
+  footer {
+    page-break-inside: avoid
+  }
+}

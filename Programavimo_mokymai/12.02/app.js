@@ -42,6 +42,73 @@ if (isEiles === 3) {
 console.log(skaicius, isEiles,)
 
 
+// let iskrito = 0;
+// let saugiklis2 = 1000;
+// let praejesMetimas = 0;
+// let kiekMetimu = 0;
+ 
+// do {
+//     let kauliukas = rand(1, 6);
+   
+//     kiekMetimu += 1;
+//     saugiklis2--;
+   
+//     if (kauliukas == praejesMetimas) {
+//         iskrito += 1;
+//     }
+//     else if (iskrito == 3) {
+//         console.log(`Pagaliau iskrito! Po ${kiekMetimu}`)
+//         break;
+//     } else {
+//         console.log('Nekrito', saugiklis2);
+//         iskrito = 0;
+//     }
+//     praejesMetimas = kauliukas;
+//     //Saugiklis
+//     if (!saugiklis2) {
+//         console.log('Sudeginom saugikli..');
+//         break;
+//     }
+ 
+// } while (iskrito <= 3 && saugiklis2 > 0);
+
+// let trysKartai = function() {
+ 
+//   let n1 = 0;
+//   let n2 = 0;
+//   let n3 = 0;
+//   let n4 = 0;
+//   let n5 = 0;
+//   let n6 = 0;
+ 
+//   let laimingas = null;
+ 
+//   do {
+//     const dice = Math.floor(Math.random() * 6) + 1;
+//     console.log("Iškrito:", dice);
+ 
+//     if (dice === 1) n1++;
+//     else if (dice === 2) n2++;
+//     else if (dice === 3) n3++;
+//     else if (dice === 4) n4++;
+//     else if (dice === 5) n5++;
+//     else if (dice === 6) n6++;
+ 
+//     if (n1 === 3) laimingas = 1;
+//     else if (n2 === 3) laimingas = 2;
+//     else if (n3 === 3) laimingas = 3;
+//     else if (n4 === 3) laimingas = 4;
+//     else if (n5 === 3) laimingas = 5;
+//     else if (n6 === 3) laimingas = 6;
+ 
+//   } while (laimingas === null);
+ 
+//   return laimingas;
+// };
+ 
+// const r = trysKartai();
+// console.log("Skaičius", r, "iškrito 3 kartus (nebūtinai iš eilės)!");
+
 // 4. Spausdinti skaičių kvadratus nuo 1 iki 5
 
 // // Išveskite: 1 4 9 16 25
