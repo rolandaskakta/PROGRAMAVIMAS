@@ -1,95 +1,62 @@
 <!doctype html>
 <html lang="lt">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sąskaita faktūra - Šablonas</title>
+  <title>PVM Sąskaita faktūra</title>
   <script src="app.js" defer></script>
   <link rel="stylesheet" href="style.css">
-  
+
 </head>
+
 <body>
   <div class="invoice-wrap">
     <header>
       <div class="brand">
-        
+
         <div class="company">
-          <div class="name">Sąskaita faktūra</div>
-          <div><b>Sąskaita Nr:</b><p class="saskaitos-numeris">SF-2025-001</p></div>
-          <div><b>Data:</b> <p class="israsymo-data">2025-12-01</p></div>
-          <div><b>Mokėti iki:</b> <p class="apmoketi-iki">2025-12-15</p></div>
+          <div class="name">PVM Sąskaita faktūra</div>
+          <div class="saskaitos-data"><b>Sąskaita Nr:</b>
+            <p id="saskaitos-numeris"></p>
+          </div>
+          <div class="saskaitos-data"><b>Saskaitos išrašymo data:</b>
+            <p id="israsymo-data"></p>
+          </div>
+          <div class="saskaitos-data"><b>Mokėti iki:</b>
+            <p id="apmoketi-iki"></p>
+          </div>
         </div>
       </div>
-      
+
     </header>
 
     <section class="addresses">
+      
       <div>
-        <h4>Gavėjas</h4>
-        <p>
-          UAB Kliento Pavadinimas<br>
-          J. Basanavičiaus g. 10<br>
-          Vilnius, Lietuva<br>
-          Įm. kodas: 987654321<br>
-          PVM: LT987654321
-        </p>
+        <h4>Pirkėjas</h4>
+        <p id="pirkejo-adresas"></p>
+        <p id="pirkejo-kodas"></p>
+        <p id="pirkejo-pastas"></p>
+        <p id="pirkejo-pavadinimas"></p>
+        <p id="pirkejo-telefonas"></p>
+        <p id="pirkejo-pvm"></p>
       </div>
       <div>
-        <h4>Mokėjimo informacija</h4>
-        <p>
-          Bankas: Swedbank<br>
-          Sąskaita: LT12 3456 7890 1234 5678<br>
-          SWIFT: HABA LT 22
-        </p>
-      </div>
-    </section>
+        <h4>Pardavėjas</h4>
+        <p id="pardavejo-adresas"></p>
+        <p id="pardavejo-kodas"></p>
+        <p id="pardavejo-pastas"></p>
+        <p id="pardavejo-pavadinimas"></p>
+        <p id="pardavejo-telefonas"></p>
+        <p id="pardavejo-pvm"></p>
 
-    <table>
-      <thead>
-        <tr>
-          <th style="width:6%" class="center">#</th>
-          <th style="width:45%">Aprašymas</th>
-          <th style="width:12%" class="right">Kiekis</th>
-          <th style="width:12%" class="right">Vnt. kaina</th>
-          <th style="width:12%" class="right">Nuolaida</th>
-          <th style="width:13%" class="right">Suma</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="center">1</td>
-          <td>Programavimo paslaugos — sąsajos kūrimas (40 val.)</td>
-          <td class="right">40</td>
-          <td class="right">40.00 €</td>
-          <td class="right">0.00 €</td>
-          <td class="right">1600.00 €</td>
-        </tr>
-        <tr>
-          <td class="center">2</td>
-          <td>Hostingas ir palaikymas (mėnesinis)</td>
-          <td class="right">1</td>
-          <td class="right">50.00 €</td>
-          <td class="right">0.00 €</td>
-          <td class="right">50.00 €</td>
-        </tr>
-        <tr class="total">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td class="right">Tarpinė suma</td>
-          <td class="right">1650.00 €</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td class="right">PVM (21%)</td>
-          <td class="right">346.50 €</td>
-        </tr>
-      </tbody>
-    </table>
+      </div>
+    </section >
+
+    <div id="krepselis"></div>
+
+
 
     <div class="summary">
       <table>
@@ -104,10 +71,8 @@
       </table>
     </div>
 
-    <footer>
-      <p><strong>Pastabos:</strong> Ačiū už bendradarbiavimą. Mokėjimo paskirtyje nurodykite sąskaitos numerį.</p>
-      <p style="margin-top:8px">Kontaktai: info@pavyzdys.lt | +370 600 00000</p>
-    </footer>
+   
   </div>
 </body>
+
 </html>

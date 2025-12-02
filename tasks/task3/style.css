@@ -42,23 +42,19 @@ header {
 
 .company .name {
   font-weight: 700;
-  font-size: 18px;
-   text-align: right
+  font-size: 30px;
+   text-align: left
    
 }
-.name div {
+.saskaitos-data {
   display: flex;
   flex-direction: row;
-  margin-bottom: 6px;
-  justify-content: space-between;
-  
-}
+  margin: 6px 6px 6px 0;
+   text-align: left;
+   gap: 5px;
 
-.name {
-  font-size: 14px;
- 
-}
 
+}
 
 
 /* Addresses */
@@ -74,7 +70,7 @@ header {
 }
 
 .addresses h4 {
-  font-size: 13px;
+  font-size: 18px;
   color: #657488;
   margin-bottom: 8px
 }
@@ -87,10 +83,10 @@ header {
 /* Table */
 table {
   width: 100%;
-  border-collapse: collapse;
+  padding: 10px;
 }
 
-thead th {
+table thead th {
   background: #fafbfd;
   text-align: left;
   padding: 12px 10px;
