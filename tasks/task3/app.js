@@ -202,7 +202,7 @@ function saskaita(inv) {
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
 
-    ['Prekės pavadinimas', 'Kiekis', 'Kaina', 'Nuolaida', 'Suma'].forEach(text => {
+    ['Prekės pavadinimas', 'Kiekis', 'Kaina be PVM', 'Nuolaida', 'Suma'].forEach(text => {
         const th = document.createElement('th');
         th.innerText = text;
         headerRow.appendChild(th);
