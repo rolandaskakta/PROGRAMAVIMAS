@@ -5,7 +5,7 @@ function rand(min, max) {
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)
 }
- 
+
 
 const manoSkaicius = rand(1, 10);
 console.log(`Sugeneruotas skaicius: ${manoSkaicius}`);
@@ -47,7 +47,7 @@ nr1.addEventListener('click', _ => {
 const renderList = _ => {
     const ol = document.querySelector('ol');
     ol.innerHTML = ''; // isvalau ol elementa
-    daugSkaiciu.forEach( sk => {
+    daugSkaiciu.forEach(sk => {
         const li = document.createElement('li')
         li.innerText = sk;
         ol.appendChild(li);
@@ -63,7 +63,7 @@ let daugSkaiciu;
 
 daugSkaiciu = localStorage.getItem('mano_skaiciai'); //bandom paimti skaicius is local storage
 
-if(null === daugSkaiciu) {
+if (null === daugSkaiciu) {
     //true jeigu local storage neturi tokio iraso (pradzia)
     daugSkaiciu = [];
 } else {
@@ -99,10 +99,38 @@ spalvos = localStorage.getItem('Spalva');
 
 if (null === spalvos) {
     spalvos = [];
-}  else {
+} else {
     spalvos = JSON.parse(spalvos);
 }
 
 const zalias = document.querySelector('#zalias');
 const melynas = document.querySelector('#melynas');
 const raudonas = document.querySelector('#raudonas');
+
+zalias.addEventListener('click', _ => pridetiSpalva('green'));
+melynas.addEventListener('click', _ => pridetiSpalva('blue'));
+raudonas.addEventListener('click', _ => pridetiSpalva('red'));
+
+const pridetiSpalva = spalva => {
+    spalvos.push(spalva);
+    localStorage.setItem('Spalva', JSON.stringify(spalvos));
+    rodytiSpalvas();
+}
+
+const rodytiSpalvas = _ => {
+    const divas = document.getElementById('divas');
+    divas.innerHTML = '';
+
+    spalvos.forEach(sp => {
+        const kvadratas = document.createElement('div');
+        kvadratas.style.width = '50px';
+        kvadratas.style.height = '50px';
+        kvadratas.style.display = 'inline-block';
+        kvadratas.style.marginRight = '6px';
+        kvadratas.style.backgroundColor = sp;
+        divas.appendChild(kvadratas);
+    });
+}
+
+rodytiSpalvas();
+console.log(spalvos)
