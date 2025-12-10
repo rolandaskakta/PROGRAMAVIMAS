@@ -12,7 +12,6 @@ body {
   padding: 24px
 }
 
-/* Container */
 .invoice-wrap {
   max-width: 900px;
   margin: 24px auto;
@@ -43,44 +42,43 @@ header {
 .company .name {
   font-weight: 700;
   font-size: 30px;
-   text-align: left
-   
+  text-align: left
 }
+
 .saskaitos-data {
   display: flex;
   flex-direction: row;
   margin: 6px 6px 6px 0;
-   text-align: left;
-   gap: 5px;
+  text-align: left;
+  gap: 5px;
 
 
 }
 
 
-/* Addresses */
-.addresses {
+.rekvizitai {
   display: flex;
   gap: 24px;
   padding: 20px 32px;
   border-bottom: 1px solid #eef2f6
 }
 
-.addresses>div {
+.rekvizitai div {
   flex: 1
 }
 
-.addresses h4 {
+.rekvizitai h4 {
   font-size: 18px;
   color: #657488;
   margin-bottom: 8px
 }
 
-.addresses p {
+.rekvizitai p {
   font-size: 14px;
   line-height: 1.4
 }
 
-/* Table */
+
 table {
   width: 100%;
   padding: 10px;
@@ -101,48 +99,42 @@ tbody td {
   font-size: 14px
 }
 
-tbody tr.total td {
-  font-weight: 700;
-  background: #fbfcff
+.krepselio-lentele td:nth-child(1),
+.krepselio-lentele td:nth-child(2),
+.krepselio-lentele td:nth-child(3),
+.krepselio-lentele td:nth-child(4) {
+  text-align: left;
 }
 
-.right {
-  text-align: right
+.krepselio-lentele td:nth-child(5) {
+  text-align: right;
 }
 
-.center {
-  text-align: center
+
+.krepselio-lentele tr:last-child td,
+.krepselio-lentele tr:nth-last-child(2) td,
+.krepselio-lentele tr:nth-last-child(3) td {
+  text-align: right;
+  font-weight: bold;
 }
 
-/* Totals */
-.summary {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 32px 40px
+.krepselio-lentele tr:nth-last-child(4) td {
+  text-align: right;
+  font-weight: bold;
 }
 
-.summary table {
-  width: 360px
+.krepselio-lentele tr:nth-last-child(4) td:last-child {
+  border-bottom: 1px solid #f1f5f9 !important;
 }
 
-.summary td {
-  padding: 8px 10px
+.krepselio-lentele tr:last-child td:nth-child(-n+3),
+.krepselio-lentele tr:nth-last-child(2) td:nth-child(-n+3),
+.krepselio-lentele tr:nth-last-child(3) td:nth-child(-n+3),
+.krepselio-lentele tr:nth-last-child(4) td:nth-child(-n+4) {
+  border: none;
+  background: transparent;
 }
 
-.summary tr.total-row td {
-  font-weight: 800;
-  font-size: 16px
-}
-
-/* Footer */
-footer {
-  padding: 20px 32px 32px;
-  font-size: 13px;
-  color: #667085;
-  border-top: 1px solid #eef2f6
-}
-
-/* Responsive */
 @media (max-width:700px) {
   header {
     flex-direction: column;
@@ -163,7 +155,7 @@ footer {
   }
 }
 
-/* Print-friendly */
+
 @media print {
   body {
     background: white;
