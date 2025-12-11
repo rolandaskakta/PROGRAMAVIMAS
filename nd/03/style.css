@@ -1,0 +1,151 @@
+ h1,
+ h4 {
+     display: inline-block;
+     margin: 0 5px;
+ }
+
+ .red {
+     color: red;
+ }
+
+ .blue {
+     color: blue;
+ }
+
+ #output {
+     font-size: 24px;
+ }
+
+ .row {
+     display: flex;
+     gap: 10px;
+ }
+
+ .circle {
+     width: 100px;
+     height: 100px;
+     background-color: blue;
+     border-radius: 50%;
+ }
+  .zebra-line {
+    display: flex;
+    gap: 12px;
+  }
+
+  .dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .dot-red { background: red; }
+  .dot-blue { background: blue; }
+
+    body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  #output1 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .line {
+    margin-bottom: 4px;
+  }
+/* //-------------------------------------/// */
+
+ /* Kiekviena žvaigždžių grupė naujoje eilutėje */
+  .stars-row-item {
+    display: block;
+    white-space: pre;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .stars-row-item + .stars-row-item {
+    margin-top: 4px;
+  }
+  
+/* 7 uzduotis */ 
+
+ .matrio-container {
+    width: 520px;
+    height: 520px;
+    margin: 40px auto;
+    position: relative;
+    background: #fafafa;
+    border: 1px solid #e3e3e3;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .matrio-square {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 6px;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+
+  /* 8 uzduotis */
+   body uniqueSquareGrid{
+    background: #fff;
+    padding: 10px;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #uniqueSquareGrid {
+    display: grid;
+    grid-template-columns: repeat(41, 14px);
+    grid-template-rows: repeat(41, 14px);
+    gap: 0;
+    user-select: none;
+  }
+
+  #uniqueSquareGrid span {
+    display: block;
+    width: 14px;
+    height: 14px;
+    color: green;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+  }
+   #uniqueSquareGrid span.diagonal {
+    color: gold; /* geltona spalva */
+    font-weight: bold;
+  }
+
+ button {
+     padding: 20px 40px;
+     font-size: 24px;
+     font-weight: bold;
+     color: white;
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+     border: none;
+     border-radius: 50px;
+     cursor: pointer;
+     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+     transition: all 0.3s ease;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+ }
+
+ button:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+ }
+
+ button:active {
+     transform: translateY(-2px) scale(0.95);
+     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+ }

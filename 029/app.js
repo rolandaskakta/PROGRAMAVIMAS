@@ -54,11 +54,6 @@ const renderList = _ => {
     })
 }
 
-
-
-
-
-
 let daugSkaiciu;
 
 daugSkaiciu = localStorage.getItem('mano_skaiciai'); //bandom paimti skaicius is local storage
