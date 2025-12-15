@@ -72,3 +72,26 @@ input[type=color] {
     margin: 50px;
     gap:10px;
 }
+.list-row {
+    display: flex;
+    gap: 20px;
+    justify-items: flex-start;
+    align-items: center;
+}
+.delete-button {
+    border: none;
+    background-color: transparent;
+    color: brown;
+    font-size: 26px;
+    box-shadow: none;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.delete-button:hover{
+    box-shadow: none;
+    background-color: transparent;
+    transform: unset;
+} 

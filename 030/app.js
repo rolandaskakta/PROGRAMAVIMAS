@@ -52,6 +52,45 @@ const render = _ => {
         const rowHtml = listRowTemplate.content.cloneNode(true);
         const colorSq = rowHtml.querySelector('[data-color-sq]');
 
+
+        //******DELETE */
+
+
+        const deleteButtton = rowHtml.querySelector('[data-delete-sq]');
+
+        //colorItem.id sugeneruotas store metode id
+        // dataset.id i elementa prideda atributa 'data-id'
+        // dataset.id = coloritem.id // atributui priskiria reiksme data-id="1654646"
+        deleteButtton.dataset.id = colorItem.id;
+
+        deleteButtton.addEventListener('click', e => {
+
+            // e - eventas
+            // e.target is evento gautas paspaustas mygtuko elementas
+            // e.target.dataset - kreipimasis i elemento "data-" atributus
+            // e.target.dataset.id - kreipimasis i atributa "data-id"
+
+            const id = parseInt(e.target.dataset.id);
+            Destroy(id);
+        });
+
+        //****EDIT */
+        const editInput = rowHtml.querySelector('[data-edit-color-input]');
+        const editButton = rowHtml.querySelector('[data-edit-color-button]');
+
+        editInput.value = colorItem.color; // senu duomenu perrasymas i edit forma
+        editButton.dataset.id = colorItem.id;
+        editButton.addEventListener('click', e => {
+            const id = parseInt(e.target.dataset.id);
+            const color = editInput.value;
+
+            Update(id, color);
+
+
+        })
+
+
+
         colorSq.style.backgroundColor = colorItem.color + '70'; // + permatomumo skaicius
         colorSq.style.borderColor = colorItem.color;
 
@@ -64,7 +103,7 @@ const render = _ => {
 
 
 
-/* STORE vykdo naujo "daikto" iirasyma i saugykla
+/* STORE vykdo naujo "daikto" irasyma i saugykla
 turi gauti "daikta"
 turi "daiktui" priskirti ID ir irasyti i saugykla
 */
@@ -75,20 +114,34 @@ const Store = data => {
         id, // supaprastintas id: id,
         color: data
     }
-    LIST.push(dataToStore);
+    LIST.unshift(dataToStore);
+    writeLocalStorage();
+    render();
+}
+
+/* 
+Destroy ivykdo daikto pasalinima is saugyklos
+turi gauti "daikto" identifikatoriu
+turi pasalinti daikta su nurodytu identifikatorium
+*/
+
+const Destroy = id => {
+    LIST = LIST.filter(color => color.id != id); // ismetam kvadratuka
     writeLocalStorage();
     render();
 }
 
 
-
-
-
-
-
-
-
-
+/**
+ * Update vykdo redaguoto "daikto" saugojima saugykloje
+ * turi gauti "daikto" identifikatoriu ir daikto naujas savybes
+ * turi persaugoti daikta su nurodytu identifikatoriu ir naujom savybem
+ */
+const Update = (id, data) => {
+    LIST = LIST.map(item => item.id == id ? {...item, color: data} : item);
+    writeLocalStorage();
+    render();
+};
 
 
 init(); // inicijuojam/paleidziam funkcija
