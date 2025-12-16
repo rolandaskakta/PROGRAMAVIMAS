@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD uzduotis</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Ganykla</h1>
+
+
+    <fieldset class="create">
+        <legend>Paleisti gyvuli i ganykla</legend>
+
+
+        <select data-create-type>
+            <option value="Avis">Avis</option>
+            <option value="Antis">Antis</option>
+            <option value="Antilopė">Antilopė</option>
+        </select>
+
+
+        <input type="number" data-create-weight>
+
+
+        <button data-create-button>Paleisti</button>
+    </fieldset>
+
+
+    <section class="list" data-animals-list></section>
+
+
+    <template data-list-template>
+        <div class="list-row" data-list-row>
+            <strong data-animal-type></strong>
+
+
+            <input type="number" data-edit-weight>
+            <span>kg</span>
+
+
+            <button data-edit-button>Pakeisti svori</button>
+            <button class="delete-button" data-delete-button>X</button>
+        </div>
+    </template>
+</body>
+
+</html>
