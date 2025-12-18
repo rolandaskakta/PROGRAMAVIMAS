@@ -1,6 +1,4 @@
-import {v4 as uuidV4 } from 'uuid';
-
-
+import Ls from './Ls.js';
 console.log('CRUD');
 
 /* 
@@ -11,14 +9,11 @@ Store - veiksmas
 
 */
 
-
-
-let LIST;
-const KEY = 'myFAncyColorsList';
+let LS; // klases Ls objektas (bus)
 
 const init = _ => {
-    readLocalStorage();
-    render();
+    LS = new Ls('myFAncyColorsList'); // LS/list jau atsiranda kvadratukai spalvu
+    render(LS.list);
     const createInput = document.querySelector('[data-create-color-input]');
     const createButton = document.querySelector('[data-create-color-button]');
     createButton.addEventListener('click', _ => {
@@ -26,15 +21,16 @@ const init = _ => {
         const dataToStore ={
             color
         }
-        Store(dataToStore);
+        LS.Store(dataToStore);
+        render(LS.list);
     })
 }
 
-const render = _ => {
+const render = list => {
     const listBin = document.querySelector('[data-colors-list]');
     const listRowTemplate = document.querySelector('[data-list-template]');
     listBin.innerHTML = '';
-    LIST.forEach(colorItem => {
+    list.forEach(colorItem => {
         const rowHtml = listRowTemplate.content.cloneNode(true);
         const colorSq = rowHtml.querySelector('[data-color-sq]');
 
@@ -56,7 +52,9 @@ const render = _ => {
 
         
             const id = e.target.dataset.id;
-            Destroy(id);
+            LS.Destroy(id);
+            render(LS.list);
+
         });
 
         //****EDIT */
@@ -73,7 +71,8 @@ const render = _ => {
                 color
             }
 
-            Update(id, dataToUpdate);
+            LS.Update(id, dataToUpdate);
+            render(LS.list);
 
         })
 
@@ -84,66 +83,5 @@ const render = _ => {
 
     });
 }
-
-//* CRUD Code**//
-const readLocalStorage = _ => {
-    let data = localStorage.getItem(KEY);
-    if (null === data) {
-        LIST = [];
-    } else {
-        LIST = JSON.parse(data);
-    }
-}
-
-const writeLocalStorage = _ => {
-    let data = JSON.stringify(LIST);
-    localStorage.setItem(KEY, data);
-}
-
-//* CRUD Code**//
-
-
-/* STORE vykdo naujo "daikto" irasyma i saugykla
-turi gauti "daikta"
-turi "daiktui" priskirti ID ir irasyti i saugykla
-*/
-
-const Store = data => {
-    // const id = rand(10000000, 999999999); //netikras unikalus numeris
-    const id = uuidV4();
-    const dataToStore = {
-        ...data,
-        id,
-        
-    }
-    LIST.unshift(dataToStore);
-    writeLocalStorage();
-    render();
-}
-
-/* 
-Destroy ivykdo daikto pasalinima is saugyklos
-turi gauti "daikto" identifikatoriu
-turi pasalinti daikta su nurodytu identifikatorium
-*/
-
-const Destroy = id => {
-    LIST = LIST.filter(item => item.id != id); // ismetam kvadratuka
-    writeLocalStorage();
-    render();
-}
-
-
-/**
- * Update vykdo redaguoto "daikto" saugojima saugykloje
- * turi gauti "daikto" identifikatoriu ir daikto naujas savybes
- * turi persaugoti daikta su nurodytu identifikatoriu ir naujom savybem
- */
-const Update = (id, data) => {
-    LIST = LIST.map(item => item.id == id ? {...item, ...data, id} : item);
-    writeLocalStorage();
-    render();
-};
-
 
 init(); // inicijuojam/paleidziam funkcija

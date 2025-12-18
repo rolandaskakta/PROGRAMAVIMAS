@@ -176,6 +176,87 @@ function validate(uuid) {
 
 /***/ },
 
+/***/ "./src/Ls.js"
+/*!*******************!*\
+  !*** ./src/Ls.js ***!
+  \*******************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/v4.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+var Ls = /*#__PURE__*/_createClass(function Ls(key) {
+  var _this = this;
+  _classCallCheck(this, Ls);
+  _defineProperty(this, "readLocalStorage", function (_) {
+    var data = localStorage.getItem(_this.key);
+    if (null === data) {
+      _this.list = [];
+    } else {
+      _this.list = JSON.parse(data);
+    }
+  });
+  _defineProperty(this, "writeLocalStorage", function (_) {
+    var data = JSON.stringify(_this.list);
+    localStorage.setItem(_this.key, data);
+  });
+  //* CRUD Code**//
+  /* STORE vykdo naujo "daikto" irasyma i saugykla
+  turi gauti "daikta"
+  turi "daiktui" priskirti ID ir irasyti i saugykla
+  */
+  _defineProperty(this, "Store", function (data) {
+    // const id = rand(10000000, 999999999); //netikras unikalus numeris
+    var id = (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    var dataToStore = _objectSpread(_objectSpread({}, data), {}, {
+      id: id
+    });
+    _this.list.unshift(dataToStore);
+    _this.writeLocalStorage();
+  });
+  /* 
+  Destroy ivykdo daikto pasalinima is saugyklos
+  turi gauti "daikto" identifikatoriu
+  turi pasalinti daikta su nurodytu identifikatorium
+  */
+  _defineProperty(this, "Destroy", function (id) {
+    _this.list = _this.list.filter(function (item) {
+      return item.id != id;
+    }); // ismetam kvadratuka
+    _this.writeLocalStorage();
+  });
+  /**
+   * Update vykdo redaguoto "daikto" saugojima saugykloje
+   * turi gauti "daikto" identifikatoriu ir daikto naujas savybes
+   * turi persaugoti daikta su nurodytu identifikatoriu ir naujom savybem
+   */
+  _defineProperty(this, "Update", function (id, data) {
+    _this.list = _this.list.map(function (item) {
+      return item.id == id ? _objectSpread(_objectSpread(_objectSpread({}, item), data), {}, {
+        id: id
+      }) : item;
+    });
+    _this.writeLocalStorage();
+  });
+  this.key = key; // prisimenam key
+  this.readLocalStorage(); // paleidziam metoda readlocalstorage
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ls); // iseksportuojam
+
+/***/ },
+
 /***/ "./src/app.js"
 /*!********************!*\
   !*** ./src/app.js ***!
@@ -183,13 +264,7 @@ function validate(uuid) {
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/v4.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+/* harmony import */ var _Ls_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Ls.js */ "./src/Ls.js");
 
 console.log('CRUD');
 
@@ -201,11 +276,11 @@ Store - veiksmas
 
 */
 
-var LIST;
-var KEY = 'myFAncyColorsList';
+var LS; // klases Ls objektas (bus)
+
 var init = function init(_) {
-  readLocalStorage();
-  render();
+  LS = new _Ls_js__WEBPACK_IMPORTED_MODULE_0__["default"]('myFAncyColorsList'); // LS/list jau atsiranda kvadratukai spalvu
+  _render(LS.list);
   var createInput = document.querySelector('[data-create-color-input]');
   var createButton = document.querySelector('[data-create-color-button]');
   createButton.addEventListener('click', function (_) {
@@ -213,14 +288,15 @@ var init = function init(_) {
     var dataToStore = {
       color: color
     };
-    Store(dataToStore);
+    LS.Store(dataToStore);
+    _render(LS.list);
   });
 };
-var render = function render(_) {
+var _render = function render(list) {
   var listBin = document.querySelector('[data-colors-list]');
   var listRowTemplate = document.querySelector('[data-list-template]');
   listBin.innerHTML = '';
-  LIST.forEach(function (colorItem) {
+  list.forEach(function (colorItem) {
     var rowHtml = listRowTemplate.content.cloneNode(true);
     var colorSq = rowHtml.querySelector('[data-color-sq]');
 
@@ -239,7 +315,8 @@ var render = function render(_) {
       // e.target.dataset.id - kreipimasis i atributa "data-id"
 
       var id = e.target.dataset.id;
-      Destroy(id);
+      LS.Destroy(id);
+      _render(LS.list);
     });
 
     //****EDIT */
@@ -253,73 +330,13 @@ var render = function render(_) {
       var dataToUpdate = {
         color: color
       };
-      Update(id, dataToUpdate);
+      LS.Update(id, dataToUpdate);
+      _render(LS.list);
     });
     colorSq.style.backgroundColor = colorItem.color + '70'; // + permatomumo skaicius
     colorSq.style.borderColor = colorItem.color;
     listBin.appendChild(rowHtml);
   });
-};
-
-//* CRUD Code**//
-var readLocalStorage = function readLocalStorage(_) {
-  var data = localStorage.getItem(KEY);
-  if (null === data) {
-    LIST = [];
-  } else {
-    LIST = JSON.parse(data);
-  }
-};
-var writeLocalStorage = function writeLocalStorage(_) {
-  var data = JSON.stringify(LIST);
-  localStorage.setItem(KEY, data);
-};
-
-//* CRUD Code**//
-
-/* STORE vykdo naujo "daikto" irasyma i saugykla
-turi gauti "daikta"
-turi "daiktui" priskirti ID ir irasyti i saugykla
-*/
-
-var Store = function Store(data) {
-  // const id = rand(10000000, 999999999); //netikras unikalus numeris
-  var id = (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  var dataToStore = _objectSpread(_objectSpread({}, data), {}, {
-    id: id
-  });
-  LIST.unshift(dataToStore);
-  writeLocalStorage();
-  render();
-};
-
-/* 
-Destroy ivykdo daikto pasalinima is saugyklos
-turi gauti "daikto" identifikatoriu
-turi pasalinti daikta su nurodytu identifikatorium
-*/
-
-var Destroy = function Destroy(id) {
-  LIST = LIST.filter(function (item) {
-    return item.id != id;
-  }); // ismetam kvadratuka
-  writeLocalStorage();
-  render();
-};
-
-/**
- * Update vykdo redaguoto "daikto" saugojima saugykloje
- * turi gauti "daikto" identifikatoriu ir daikto naujas savybes
- * turi persaugoti daikta su nurodytu identifikatoriu ir naujom savybem
- */
-var Update = function Update(id, data) {
-  LIST = LIST.map(function (item) {
-    return item.id == id ? _objectSpread(_objectSpread(_objectSpread({}, item), data), {}, {
-      id: id
-    }) : item;
-  });
-  writeLocalStorage();
-  render();
 };
 init(); // inicijuojam/paleidziam funkcija
 
