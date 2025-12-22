@@ -25,25 +25,6 @@ const init = _ => {
     });
 };
 
-
-// const readLocalStorage = _ => {
-//     const data = localStorage.getItem(KEY);
-//     LIST = data === null ? [] : JSON.parse(data);
-// };
-
-// const writeLocalStorage = _ => {
-//     localStorage.setItem(KEY, JSON.stringify(LIST));
-// };
-
-
-// const rand = (min, max) => {
-//     const minC = Math.ceil(min);
-//     const maxF = Math.floor(max);
-//     return Math.floor(Math.random() * (maxF - minC + 1) + minC);
-// };
-
-
-
 const render = list => {
     const listBin = document.querySelector('[data-animals-list]');
     const template = document.querySelector('[data-list-template]');
@@ -61,7 +42,6 @@ const render = list => {
         typeEl.textContent = animal.type;
         editInput.value = animal.weight;
 
-        
         deleteButton.dataset.id = animal.id;
         deleteButton.addEventListener('click', e => {
             const id = e.target.dataset.id;
@@ -69,7 +49,6 @@ const render = list => {
             render(LS.list);
         });
 
-        
         editButton.dataset.id = animal.id;
         editButton.addEventListener('click', e => {
             const id = e.target.dataset.id;
@@ -84,36 +63,5 @@ const render = list => {
         listBin.appendChild(rowHtml);
     });
 };
-
-
-// const Store = (type, weight) => {
-//     const id = rand(10000000, 999999999);
-
-//     const dataToStore = {
-//         id,
-//         type,
-//         weight
-//     };
-
-//     LIST.unshift(dataToStore);
-//     writeLocalStorage();
-//     render();
-// };
-
-
-// const Destroy = id => {
-//     LIST = LIST.filter(animal => animal.id != id);
-//     writeLocalStorage();
-//     render();
-// };
-
-
-// const Update = (id, weight) => {
-//     LIST = LIST.map(animal =>
-//         animal.id == id ? { ...animal, weight } : animal
-//     );
-//     writeLocalStorage();
-//     render();
-// };
 
 init();
