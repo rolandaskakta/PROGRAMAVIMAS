@@ -1,25 +1,28 @@
 const express = require("express");
 const router = express.Router();
-const validateInvoice = require("../middlewares/validateInvoice.middleware");
-const validateInvoiceId = require("../middlewares/validateInvoiceId.middleware");
-
-
 
 const {
-  createInvoice,
-  getInvoices,
-  getInvoiceById,
-  deleteInvoice,
+    createInvoice,
+    getInvoices,
+    getInvoiceById,
+    deleteInvoice,
+    updateInvoice,
 } = require("../controllers/invoice.controller");
 
-router.get("/hello", (req, res) => {
-  res.json({ message: "Hello API!" });
-});
+const validateInvoice = require("../middlewares/validateInvoice.middleware");
+const validateInvoiceId = require("../middlewares/validateInvoiceId.middleware");
 
 router.post("/", validateInvoice, createInvoice);
 router.get("/", getInvoices);
 router.get("/:id", validateInvoiceId, getInvoiceById);
-router.delete("/:id", deleteInvoice);
+router.delete("/:id", validateInvoiceId, deleteInvoice);
+router.put(
+  "/:id",
+  validateInvoiceId,
+  validateInvoice,
+  updateInvoice
+);
+
 
 module.exports = router;
 
