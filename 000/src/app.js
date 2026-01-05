@@ -16,7 +16,9 @@ app.use((req, res, next) => {
       `Resursas nerastas: ${req.originalUrl}`,
       404
     )
+    
   );
+  
 });
 
 // ❗ ERROR HANDLER – VISADA PASKUTINIS
