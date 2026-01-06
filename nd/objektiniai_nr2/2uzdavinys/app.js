@@ -19,33 +19,27 @@ class Puodelis {
     this.ipilta = ipilta;
   }
 
-  // Sukuria ir grąžina du puodelius
   static gamintiPuodelius() {
     const p1 = new Puodelis('raudonas', Puodelis.pilnas);
     const p2 = new Puodelis('geltonas', Puodelis.tuscias);
     return [p1, p2];
   }
 
-  // Perpilti tarp dviejų nurodytų puodelių
   static perpilti(p1, p2) {
     if (!p1 || !p2) return;
 
-    // jeigu skirtingi – sukeičiam būsenas
     if (p1.ipilta !== p2.ipilta) {
       p1.ipilta = p1.ipilta === Puodelis.pilnas ? Puodelis.tuscias : Puodelis.pilnas;
       p2.ipilta = p2.ipilta === Puodelis.pilnas ? Puodelis.tuscias : Puodelis.pilnas;
     }
-    // jei abu pilni arba abu tušti – nieko nedarom
   }
 
-  // Abu padaro tuščius
   static ispiltiViska(p1, p2) {
     if (!p1 || !p2) return;
     p1.ipilta = Puodelis.tuscias;
     p2.ipilta = Puodelis.tuscias;
   }
 
-  // Abu padaro pilnus
   static ipiltiIAbu(p1, p2) {
     if (!p1 || !p2) return;
     p1.ipilta = Puodelis.pilnas;
@@ -53,7 +47,6 @@ class Puodelis {
   }
 }
 
-// Pavyzdinis naudojimas
 const [p1, p2] = Puodelis.gamintiPuodelius();
 console.log(p1, p2);
 
@@ -63,11 +56,6 @@ console.log(p1, p2);
 Puodelis.ispiltiViska(p1, p2);
 console.log(p1, p2);
 
-Puodelis.perpilti(p1, p2); // nieko neįvyks (abu tušti)
-console.log(p1, p2);
-
 Puodelis.ipiltiIAbu(p1, p2);
 console.log(p1, p2);
 
-Puodelis.perpilti(p1, p2); // nieko neįvyks (abu pilni)
-console.log(p1, p2);
