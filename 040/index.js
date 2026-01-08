@@ -22,42 +22,42 @@ app.get('/', (req, res) => {
 
 
 app.get('/service/:slug', (req, res) => {
-    // Iš URL paimame slug parametrą
-    const slug = req.params.slug;
-    // Randame atitinkamą paslaugą pagal slug
-    const service = services.find(s => s.slug === slug);
- 
-    // Tikriname, ar paslauga rasta
-    if (!service) {
-        // Jei paslauga nerasta, grąžiname 404 klaidą
-        return res.status(404).send('Service not found');
-    }
-   
-    // skaitome tris atskirus failus. Toks skaitymas galimas tik backend'e
-    const top = fs.readFileSync('./html/top.html', 'utf8');
-    const bottom = fs.readFileSync('./html/bottom.html', 'utf8');
-    const serviceHtml = fs.readFileSync('./html/service.html', 'utf8');
- 
-    // Sukuriame HTML sąrašą iš paslaugos savybių
-    let features = '';
-    service.features.forEach(feature => {
-        features += `<li>${feature}</li>`;
-    });
- 
-    // Pakeičiame vietas HTML faile su faktiniais duomenimis
-    let servicePage = serviceHtml.replace('{{icon}}', service.icon)
-                                 .replace('{{title}}', service.title)
-                                 .replace('{{description}}', service.description)
-                                 .replace('{{features}}', features);
- 
-    // Pakeičiame puslapio pavadinimą
-    const pageTitle = service.title;
-    const topWithTitle = top.replace('{{title}}', pageTitle);
- 
-    // Siunčiame galutinį HTML atsakymą
-    res.send(topWithTitle + servicePage + bottom);
+  // Iš URL paimame slug parametrą
+  const slug = req.params.slug;
+  // Randame atitinkamą paslaugą pagal slug
+  const service = services.find(s => s.slug === slug);
+
+  // Tikriname, ar paslauga rasta
+  if (!service) {
+    // Jei paslauga nerasta, grąžiname 404 klaidą
+    return res.status(404).send('Service not found');
+  }
+
+  // skaitome tris atskirus failus. Toks skaitymas galimas tik backend'e
+  const top = fs.readFileSync('./html/top.html', 'utf8');
+  const bottom = fs.readFileSync('./html/bottom.html', 'utf8');
+  const serviceHtml = fs.readFileSync('./html/service.html', 'utf8');
+
+  // Sukuriame HTML sąrašą iš paslaugos savybių
+  let features = '';
+  service.features.forEach(feature => {
+    features += `<li>${feature}</li>`;
+  });
+
+  // Pakeičiame vietas HTML faile su faktiniais duomenimis
+  let servicePage = serviceHtml.replace('{{icon}}', service.icon)
+    .replace('{{title}}', service.title)
+    .replace('{{description}}', service.description)
+    .replace('{{features}}', features);
+
+  // Pakeičiame puslapio pavadinimą
+  const pageTitle = service.title;
+  const topWithTitle = top.replace('{{title}}', pageTitle);
+
+  // Siunčiame galutinį HTML atsakymą
+  res.send(topWithTitle + servicePage + bottom);
 });
- 
+
 
 app.get('/services', (req, res) => {
 
@@ -77,8 +77,8 @@ app.get('/about', (req, res) => {
   const top = fs.readFileSync('./html/top.html', 'utf8');
   const bottom = fs.readFileSync('./html/bottom.html', 'utf8');
   const about = fs.readFileSync('./html/about.html', 'utf8');
-const pageTitle = 'About us';
-    const topWithTitle = top.replace('{{title}}', pageTitle);
+  const pageTitle = 'About us';
+  const topWithTitle = top.replace('{{title}}', pageTitle);
   res.send(topWithTitle + about + bottom); // vienas html failass
 });
 
@@ -89,8 +89,19 @@ app.get('/contact', (req, res) => {
   const bottom = fs.readFileSync('./html/bottom.html', 'utf8');
   const contact = fs.readFileSync('./html/contact.html', 'utf8');
 
+  const m = req.query.m;
+  if (m === 'ok') {
+    contact = contact.replace('{{successMessageDisplay}}', '');
+  }
+  else {
+    contact = contact.replace('{{successMessageDisplay}}', 'style="display:none;"');
+  }
+
+
+
+
   const pageTitle = 'Contact us';
-    const topWithTitle = top.replace('{{title}}', pageTitle);
+  const topWithTitle = top.replace('{{title}}', pageTitle);
   res.send(topWithTitle + contact + bottom); // vienas html failass
 });
 
